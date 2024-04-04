@@ -24,8 +24,9 @@ const Modal = ({ children }) => {
             onClose={onHide}
             className="shadow-teal-800 shadow-xl border border-teal-700 flex flex-col px-8 rounded-md dark:bg-body bg-white dark:text-white text-dark"
         >
-            <span onClick={onHide} className="flex justify-end cursor-pointer ">
+            <span className="flex justify-end">
                 <Image
+                    onClick={onHide}
                     className="bg-white rounded-full my-4 hover:shadow-md hover:bg-gray-300 p-1"
                     src="/assets/icons/xmark.svg"
                     alt="close"
