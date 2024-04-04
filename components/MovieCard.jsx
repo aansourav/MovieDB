@@ -4,15 +4,17 @@ const MovieCard = ({ movie }) => {
     const { id, title, poster_path, vote_average } = movie;
     return (
         <figure className="p-4 border border-black/10 shadow-sm dark:border-white/10 rounded-xl">
-            <Image
-                className="w-full object-cover"
-                src={poster_path}
-                alt=""
-                width="300"
-                height="450"
-            />
+            <Link href={`/movies/${id}`}>
+                <Image
+                    className="w-full object-cover"
+                    src={poster_path}
+                    alt=""
+                    width="300"
+                    height="450"
+                />
+            </Link>
             <figcaption className="pt-4">
-                <Link href="/movies/1">
+                <Link href={`/movies/${id}`}>
                     <h3 className="text-xl mb-1">{title}</h3>
                 </Link>
                 <p className="text-[#575A6E] text-sm mb-2">
