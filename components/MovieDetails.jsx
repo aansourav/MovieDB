@@ -1,5 +1,7 @@
+import { getDictionary } from "@/app/[lang]/dictionaries";
 import Image from "next/image";
-const MovieDetails = ({ movie }) => {
+const MovieDetails = async ({ movie, lang }) => {
+    const dictionary = await getDictionary(lang);
     const {
         backdrop_path,
         poster_path,
@@ -32,18 +34,26 @@ const MovieDetails = ({ movie }) => {
                     </h2>
                     <p className="my-2 text-slate-400 italic">{overview}</p>
                     <ul className="text-slate-300 space-y-2 my-8">
-                        <li>Release Date : {release_date}</li>
-                        <li>Average Vote : {vote_average}</li>
-                        <li>Vote Count : {vote_count}</li>
-                        <li>Popularity : {popularity}</li>
+                        <li>
+                            {dictionary.releaseDate} : {release_date}
+                        </li>
+                        <li>
+                            {dictionary.averageVote} : {vote_average}
+                        </li>
+                        <li>
+                            {dictionary.voteCount} : {vote_count}
+                        </li>
+                        <li>
+                            {dictionary.popularity} : {popularity}
+                        </li>
                     </ul>
                 </div>
                 <div className="col-span-2 space-y-4">
                     <button className="py-2 w-full bg-primary font-medium text-slate-800 rounded-md">
-                        Stream In HD
+                        {dictionary.streamHD}
                     </button>
                     <button className="py-2 w-full bg-primary font-medium text-slate-800 rounded-md">
-                        Download In HD
+                        {dictionary.downloadHD}
                     </button>
                 </div>
             </div>

@@ -3,7 +3,7 @@ import Sidebar from "@/components/Sidebar";
 import { getMovies } from "../movieData";
 import NotFound from "./not-found";
 
-const page = async ({ params: { movieId } }) => {
+const page = async ({ params: { movieId, lang } }) => {
     const movies = await getMovies("movies");
     const movie = movies.find((movie) => movie.id == movieId);
     if (!movie) {
@@ -12,8 +12,8 @@ const page = async ({ params: { movieId } }) => {
     return (
         <main>
             <div className="container grid lg:grid-cols-[218px_1fr] gap-[3.5rem]">
-                <Sidebar />
-                <MovieDetails movie={movie} />
+                <Sidebar lang={lang} />
+                <MovieDetails movie={movie} lang={lang} />
             </div>
         </main>
     );

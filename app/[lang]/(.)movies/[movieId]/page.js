@@ -1,15 +1,15 @@
-import { getMovies } from "@/app/movies/movieData";
 import Modal from "@/components/Modal";
 import MovieDetails from "@/components/MovieDetails";
+import { getMovies } from "../../movies/movieData";
 
-const page = async ({ params: { movieId } }) => {
+const page = async ({ params: { movieId, lang } }) => {
     const movies = await getMovies("movies");
     const movie = movies.find((movie) => movie.id === parseInt(movieId));
     return (
         <main>
             <div className="container grid">
                 <Modal>
-                    <MovieDetails movie={movie} />
+                    <MovieDetails movie={movie} lang={lang} />
                 </Modal>
             </div>
         </main>

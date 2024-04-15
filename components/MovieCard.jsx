@@ -1,6 +1,8 @@
+import { getDictionary } from "@/app/[lang]/dictionaries";
 import Image from "next/image";
 import Link from "next/link";
-const MovieCard = ({ movie }) => {
+const MovieCard = async ({ movie, lang }) => {
+    const dictionary = await getDictionary(lang);
     const { id, title, poster_path, vote_average } = movie;
     return (
         <figure className="p-4 border border-black/10 shadow-sm dark:border-white/10 rounded-xl">
@@ -44,7 +46,7 @@ const MovieCard = ({ movie }) => {
                         width="16"
                         height="16"
                     />
-                    <span>Details</span>
+                    <span>{dictionary.details}</span>
                 </Link>
             </figcaption>
         </figure>
