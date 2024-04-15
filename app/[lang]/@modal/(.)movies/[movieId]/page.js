@@ -1,6 +1,6 @@
-import Modal from "@/components/Modal";
 import MovieDetails from "@/components/MovieDetails";
-import { getMovies } from "../../movies/movieData";
+import { getMovies } from "@/app/[lang]/movies/movieData";
+import Modal from "@/components/Modal";
 
 const page = async ({ params: { movieId, lang } }) => {
     const movies = await getMovies("movies");
