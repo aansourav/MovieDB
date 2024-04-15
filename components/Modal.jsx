@@ -43,7 +43,7 @@
 // export default Modal;
 
 "use client";
-
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
@@ -92,10 +92,18 @@ export default function Modal({ children }) {
                 className="absolute left-0 top-0 w-full grid place-items-center bg-slate-800/50 backdrop-blur-sm z-50"
             >
                 <div className="relative w-11/12 mx-auto bg-slate-900 p-4 my-9 border border-slate-600/50 rounded-lg shadow-lg shadow-slate-400/10">
-                    <div className="flex absolute top-[-0.85rem] right-[-0.85rem] bg-slate-700 size-7 justify-center items-center border rounded-full">
-                        <button className="text-white" onClick={onDisMiss}>
+                    <div className="flex absolute top-[-0.85rem] right-[-0.85rem] bg-slate-700 size-7 justify-center items-center border rounded-full cursor-pointer">
+                        {/* <button className="text-white" onClick={onDisMiss}>
                             X
-                        </button>
+                        </button> */}
+                        <Image
+                            onClick={onDisMiss}
+                            className="bg-white rounded-full my-4 hover:shadow-md hover:bg-gray-300 p-1 "
+                            src="/assets/icons/xmark.svg"
+                            alt="close"
+                            width={30}
+                            height={30}
+                        />
                     </div>
                     {children}
                 </div>

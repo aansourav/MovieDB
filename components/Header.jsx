@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import LanguageButton from './LanguageButton';
 const Header = () => {
     return (
         <header>
@@ -19,6 +20,9 @@ const Header = () => {
                     <li>
                         <Link className="bg-primary/20 dark:bg-primary/[7%] rounded-lg backdrop-blur-[2px] p-1 inline-block" href="/">
                             <Image src="/assets/shopping-cart.svg" width="24" height="24" alt="" /></Link>
+                    </li>
+                    <li>
+                        <LanguageButton />
                     </li>
                 </ul>
             </nav>
