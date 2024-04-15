@@ -49,10 +49,10 @@ const MovieDetails = async ({ movie, lang }) => {
                     </ul>
                 </div>
                 <div className="col-span-2 space-y-4">
-                    <button className="py-2 w-full bg-primary font-medium text-slate-800 rounded-md">
+                    <button className="py-2 w-full bg-primary font-bold text-slate-800 rounded-md">
                         {dictionary.streamHD}
                     </button>
-                    <button className="py-2 w-full bg-primary font-medium text-slate-800 rounded-md">
+                    <button className="py-2 w-full bg-primary font-bold text-slate-800 rounded-md">
                         {dictionary.downloadHD}
                     </button>
                 </div>
